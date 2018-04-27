@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Runner {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         //Lifetime of creds object only lasts until end of try/catch
         try (SensitiveObject creds = new SensitiveObject()) {
@@ -14,18 +14,16 @@ public class Runner {
 
             //Add Equals Method
 
-            pausesProgram();
+            Scanner pause1 = new Scanner(System.in);
+            pause1.next();
         }
         catch (Exception e) {
             e.printStackTrace();
         }
 
-        pausesProgram();
+        Scanner pause2 = new Scanner(System.in);
+        pause2.next();
 
     }
 
-    private static void pausesProgram() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.next();
-    }
 }

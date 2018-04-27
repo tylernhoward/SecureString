@@ -11,9 +11,7 @@ public class SensitiveObject implements AutoCloseable {
     public SensitiveObject(){
         buffer = new SecureCharBuffer();
     } //Default 512 Bytes
-    public SensitiveObject(int length){
-        buffer = SecureCharBuffer.withCapacity(length);
-    }
+    public SensitiveObject(int length){ buffer = SecureCharBuffer.withCapacity(length); }
 
     public void append(final Object object){
         buffer.append(String.valueOf(object));
