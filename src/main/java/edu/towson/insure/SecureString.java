@@ -3,15 +3,15 @@ package edu.towson.insure;
 import io.github.novacrypto.SecureCharBuffer;
 
 
-public class SensitiveObject implements AutoCloseable {
+public class SecureString implements AutoCloseable {
 
     private SecureCharBuffer buffer;
     private char[] characters;
 
-    public SensitiveObject(){
+    public SecureString(){
         buffer = new SecureCharBuffer();
     } //Default 512 Bytes
-    public SensitiveObject(int length){ buffer = SecureCharBuffer.withCapacity(length); }
+    public SecureString(int length){ buffer = SecureCharBuffer.withCapacity(length); }
 
     public void append(final Object object){
         buffer.append(String.valueOf(object));

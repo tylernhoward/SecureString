@@ -6,13 +6,11 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        //Lifetime of creds object only lasts until end of try/catch
-        try (SensitiveObject creds = new SensitiveObject()) {
+        //Lifetime of credentials object only lasts until end of try/catch
+        try (SecureString credentials = new SecureString()) {
 
-            creds.append(new TestObj(123456789, "John"));
-            System.out.println(creds.read());
-
-            //Add Equals Method
+            credentials.append(new TestObj(123456789, "John"));
+            System.out.println(credentials.read());
 
             Scanner pause1 = new Scanner(System.in);
             pause1.next();
